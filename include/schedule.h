@@ -33,6 +33,12 @@ void initServices();
 
 Service *createService();
 
+bool isTimeBetween8and6(Service *service);
+
+bool isTimeAvailable(Services **services, Service *service);
+
+bool compareDates(const struct tm *date1, const struct tm *date2);
+
 void addService(Services **services, Service *service);
 
 void removeService(Services **services, unsigned int id);

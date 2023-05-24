@@ -34,19 +34,27 @@ Service *createService() {
 
     printf("[INFO] Inserted date: %s\n", datetimeString);
 
-    setStartDate(newService, datetimeString);
-    setEndDate(newService);
+bool isTimeBetween8and6(Service *service) {
+    struct tm *startsAt = service->startsAt;
+    struct tm *endsAt = service->endsAt;
 
-    printf("Enter service type: ");
-    scanf("%19s", type);
-    newService->type = strdup(type);
-
-    return newService;
+    return startsAt->tm_hour >= 8 && endsAt->tm_hour < 18;
 }
 
+bool compareDates(const struct tm *date1, const struct tm *date2) {
+    struct tm copy1 = *date1;
+    struct tm copy2 = *date2;
 
-bool isTimeAvailable(Service *service) {
-    Services *current = servicesList;
+    time_t time1 = mktime(&copy1);
+    time_t time2 = mktime(&copy2);
+
+    return time1 < time2;
+}
+
+bool isTimeAvailable(Services **services, Service *service) {
+    Services *current = *services;
+
+    if (!isTimeBetween8and6(service)) return false;
 
     while (current != NULL) {
         if (difftime(timegm(current->service->endsAt), timegm(service->startsAt)) >= 0 &&
