@@ -45,7 +45,8 @@ void listServices(Services *services);
 
 void setStartDate(Service *service, const char *datetimeString);
 
-struct tm *addMinutesToTime(const struct tm *time, int minutes);
+
+struct tm *addMinutesToTime(struct tm *time, int minutes);
 
 void setEndDate(Service *service);
 

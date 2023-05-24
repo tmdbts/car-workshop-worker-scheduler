@@ -190,15 +190,21 @@ void setStartDate(Service *service, const char *datetimeString) {
     service->startsAt = datetimePtr;
 }
 
-struct tm *addMinutesToTime(const struct tm *time, int minutes) {
+struct tm *addMinutesToTime(struct tm *time, int minutes) {
     time_t timeInSeconds = timegm((struct tm *) time);
-    time_t newTimeInSeconds = timeInSeconds;
+    time_t endTimeInSeconds = timeInSeconds + minutes * 60;
 
-    newTimeInSeconds += minutes * 60;
+    struct tm *endTime = malloc(sizeof(struct tm));
 
-    struct tm *newTime = gmtime(&newTimeInSeconds);
+    if (endTime == NULL) {
+        fprintf(stderr, "Memory allocation error!\n");
 
-    return newTime;
+        return NULL;
+    }
+
+    gmtime_r(&endTimeInSeconds, endTime);
+
+    return endTime;
 }
 
 void setEndDate(Service *service) {
