@@ -8,9 +8,9 @@ const int REPAIR_SERVICE_TIME = 60;
 
 unsigned int numberOfServices = 0;
 
-void initServices() {
-    servicesList = NULL;
-    numberOfServices = 0;
+void initBooking(Services **services, unsigned int *servicesCount) {
+    *services = NULL;
+    *servicesCount = 0;
 }
 
 Service *createService() {

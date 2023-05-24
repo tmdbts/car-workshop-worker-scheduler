@@ -19,15 +19,21 @@ typedef struct Services {
     struct Services *next;
 } Services;
 
-Services *servicesList;
+Services *booking;
+
+Services *backUpBooking;
 
 unsigned int numberOfServices;
+
+unsigned int numberOfBackupServices;
 
 extern const char *SERVICE_TYPES[];
 
 extern const int WASH_SERVICE_TIME;
 
 extern const int REPAIR_SERVICE_TIME;
+
+void initBooking(Services **services, unsigned int *servicesCount);
 
 void initServices();
 
