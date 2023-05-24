@@ -35,7 +35,8 @@ extern const int REPAIR_SERVICE_TIME;
 
 void initBooking(Services **services, unsigned int *servicesCount);
 
-void initServices();
+
+void fillBooking(Services **services, Services **backupServices);
 
 Service *createService();
 
@@ -45,21 +46,30 @@ bool isTimeAvailable(Services **services, Service *service);
 
 bool compareDates(const struct tm *date1, const struct tm *date2);
 
-void addService(Services **services, Service *service);
+void swapServices(Services *firstService, Services *secondService);
 
-void removeService(Services **services, unsigned int id);
+bool addService(Services **services, Service *newService);
 
-void orderAsc();
+void removeService(Services **services, Service *service);
 
-void orderDesc();
+void removeServiceById(Services **services, unsigned int id);
+
+void deleteService(Services **services, unsigned int id);
+
+void orderAsc(Services **services);
+
+void orderDesc(Services **services);
 
 void listServices(Services *services);
 
 void setStartDate(Service *service, const char *datetimeString);
 
+char *dateToString(struct tm *date);
 
 struct tm *addMinutesToTime(struct tm *time, int minutes);
 
 void setEndDate(Service *service);
+
+Service *getService(Services *services, unsigned int id);
 
 #endif //CAR_WORKSHOP_WORKER_SCHEDULER_SCHEDULE_H
