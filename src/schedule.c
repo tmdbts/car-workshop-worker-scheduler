@@ -33,6 +33,35 @@ void fillBooking(Services **services, Services **backupServices) {
     }
 }
 
+Service *createService() {
+    Service *newService = malloc(sizeof(Service));
+    char datetimeString[20];
+    char type[20];
+
+    if (newService == NULL) {
+        printError(MEMORY_ALLOCATION_MESSAGE);
+        return NULL;
+    }
+
+    newService->id = numberOfServices + 1;
+
+    printf("Enter service date and time (YYYY-MM-DD HH:MM): ");
+    fgets(datetimeString, 20, stdin);
+
+    if (datetimeString[strlen(datetimeString) - 1] == '\n') {
+        datetimeString[strlen(datetimeString) - 1] = '\0';
+    }
+
+    setStartDate(newService, datetimeString);
+    setEndDate(newService);
+
+    printf("Enter service type: ");
+    scanf("%19s", type);
+    newService->type = strdup(type);
+
+    return newService;
+}
+
 bool isTimeBetween8and6(Service *service) {
     struct tm *startsAt = service->startsAt;
     struct tm *endsAt = service->endsAt;
