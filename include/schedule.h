@@ -7,6 +7,9 @@
 #include <string.h>
 #include <time.h>
 
+#include "terminal_colors.h"
+#include "error_handler.h"
+
 typedef struct Service {
     unsigned int id;
     struct tm *startsAt;

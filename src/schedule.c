@@ -21,6 +21,7 @@ void fillBooking(Services **services, Services **backupServices) {
 
         if (!isTimeAvailable(services, backUp->service)) {
             backUp = backUp->next;
+
             continue;
         }
 
@@ -158,7 +159,7 @@ void orderDesc(Services **services) {
 
 bool addService(Services **services, Service *newService) {
     if (!isTimeAvailable(services, newService)) {
-        fprintf(stderr, "Time is not available.\n");
+        printError(UNAVAILABLE_TIME_SLOT_MESSAGE);
 
         return false;
     }
@@ -166,7 +167,7 @@ bool addService(Services **services, Service *newService) {
     Services *newNode = malloc(sizeof(Services));
 
     if (newNode == NULL) {
-        fprintf(stderr, "Memory allocation error!\n");
+        printError(MEMORY_ALLOCATION_MESSAGE);
 
         return false;
     }
@@ -197,7 +198,8 @@ bool addService(Services **services, Service *newService) {
 
 void removeService(Services **services, Service *service) {
     if (*services == NULL) {
-        fprintf(stderr, "Error: services list is empty!\n");
+        printError(EMPTY_LIST_ON_REMOVE_MESSAGE);
+
         return;
     }
 
@@ -210,7 +212,8 @@ void removeService(Services **services, Service *service) {
     }
 
     if (current == NULL) {
-        fprintf(stderr, "Error: service node not found!\n");
+        printError(APPOINTMENT_NOT_FOUND_MESSAGE);
+
         return;
     }
 
@@ -225,7 +228,8 @@ void removeService(Services **services, Service *service) {
 
 void removeServiceById(Services **services, unsigned int id) {
     if (*services == NULL) {
-        fprintf(stderr, "Error: services list is empty!\n");
+        printError(EMPTY_LIST_ON_REMOVE_MESSAGE);
+
         return;
     }
 
@@ -238,7 +242,8 @@ void removeServiceById(Services **services, unsigned int id) {
     }
 
     if (current == NULL) {
-        fprintf(stderr, "Error: service with ID %u not found!\n", id);
+        printError(APPOINTMENT_NOT_FOUND_MESSAGE);
+
         return;
     }
 
@@ -253,7 +258,8 @@ void removeServiceById(Services **services, unsigned int id) {
 
 void deleteService(Services **services, unsigned int id) {
     if (*services == NULL) {
-        fprintf(stderr, "Error: services list is empty!\n");
+        printError(EMPTY_LIST_ON_REMOVE_MESSAGE);
+
         return;
     }
 
@@ -266,7 +272,8 @@ void deleteService(Services **services, unsigned int id) {
     }
 
     if (curr == NULL) {
-        fprintf(stderr, "Error: service with id %u not found!\n", id);
+        printError(APPOINTMENT_NOT_FOUND_MESSAGE);
+
         return;
     }
 
@@ -294,12 +301,16 @@ char *dateToString(struct tm *date) {
 void listServices(Services *services) {
     Services *current = services;
 
+    printf("+--------------------------------+\n");
+    printf("|          Appointments          |\n");
+    printf("+--------------------------------+\n");
+
     while (current != NULL) {
-        printf("Service ID: %u\n", current->service->id);
-        printf("Starts at: %s\n", dateToString(current->service->startsAt));
-        printf("Ends at: %s\n", dateToString(current->service->endsAt));
-        printf("Type: %s\n", current->service->type);
-        printf("\n");
+        printf("| %-10s | %-17u |\n", "Service ID", current->service->id);
+        printf("| %-10s | %-17s |\n", "Starts at", dateToString(current->service->startsAt));
+        printf("| %-10s | %-17s |\n", "Ends at", dateToString(current->service->endsAt));
+        printf("| %-10s | %-17s |\n", "Type", current->service->type);
+        printf("+--------------------------------+\n");
 
         current = current->next;
     }
@@ -309,13 +320,13 @@ void setStartDate(Service *service, const char *datetimeString) {
     struct tm *datetimePtr = malloc(sizeof(struct tm));
 
     if (datetimePtr == NULL) {
-        fprintf(stderr, "Memory allocation error!\n");
+        printError(MEMORY_ALLOCATION_MESSAGE);
 
         return;
     }
 
     if (strptime(datetimeString, "%Y-%m-%d %H:%M", datetimePtr) == NULL) {
-        fprintf(stderr, "Invalid startsAt string format!\n");
+        printWarning(INVALID_DATE_FORMAT_MESSAGE);
 
         free(datetimePtr);
 
@@ -332,7 +343,7 @@ struct tm *addMinutesToTime(struct tm *time, int minutes) {
     struct tm *endTime = malloc(sizeof(struct tm));
 
     if (endTime == NULL) {
-        fprintf(stderr, "Memory allocation error!\n");
+        printError(MEMORY_ALLOCATION_MESSAGE);
 
         return NULL;
     }
