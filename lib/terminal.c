@@ -24,3 +24,36 @@ bool readYesNoInput() {
         printf("%sInvalid input. (Y/n) ", TERMINAL_COLOR_YELLOW);
     }
 }
+
+int readInt() {
+    char buffer[100];
+
+    fflush(stdin);
+
+    fgets(buffer, sizeof(buffer), stdin);
+
+    if (buffer[strlen(buffer) - 1] == '\n')
+        buffer[strlen(buffer) - 1] = '\0';
+
+    if (!isNumber(buffer)) {
+        printWarning(INVALID_INT_MESSAGE);
+
+        return readInt();
+    }
+
+    int value = atoi(buffer);
+
+    return value;
+}
+
+bool isNumber(const char *str) {
+    if (str == NULL || *str == '\0') return false;
+
+    while (*str != '\0') {
+        if (!isdigit(*str)) return false;
+
+        str++;
+    }
+
+    return true;
+}
