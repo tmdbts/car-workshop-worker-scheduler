@@ -10,20 +10,14 @@ const char *APPOINTMENT_NOT_FOUND_MESSAGE = "The appointment you selected does n
 
 const char *INVALID_DATE_FORMAT_MESSAGE = "Invalid date format (yyyy-mm-dd hh:mm).";
 
+const char *INVALID_INT_MESSAGE = "Invalid input. Please enter a valid number.";
+
 void printError(const char *message) {
-    char *error = malloc(strlen(message) + strlen(TERMINAL_COLOR_RED));
-
-    sprintf(error, "%s%s\n", TERMINAL_COLOR_RED, message);
-
-    perror(error);
+    printf("%s%s\n", TERMINAL_COLOR_RED, message);
     printf("%s", TERMINAL_COLOR_DEFAULT);
 }
 
 void printWarning(const char *message) {
-    char *error = malloc(strlen(message) + strlen(TERMINAL_COLOR_RED));
-
-    sprintf(error, "%s%s\n", TERMINAL_COLOR_YELLOW, message);
-
-    perror(error);
+    printf("%s%s\n", TERMINAL_COLOR_YELLOW, message);
     printf("%s", TERMINAL_COLOR_DEFAULT);
 }

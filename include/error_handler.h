@@ -17,6 +17,8 @@ extern const char *APPOINTMENT_NOT_FOUND_MESSAGE;
 
 extern const char *INVALID_DATE_FORMAT_MESSAGE;
 
+extern const char *INVALID_INT_MESSAGE;
+
 void printError(const char *message);
 
 void printWarning(const char *message);
