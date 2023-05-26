@@ -301,18 +301,25 @@ char *dateToString(struct tm *date) {
 void listServices(Services *services) {
     Services *current = services;
 
-    printf("+--------------------------------+\n");
-    printf("|          Appointments          |\n");
-    printf("+--------------------------------+\n");
+    printf("┌────────────────────────────────┐\n");
+    printf("│          Appointments          │\n");
+    printf("├────────────────────────────────┤\n");
 
     while (current != NULL) {
-        printf("| %-10s | %-17u |\n", "Service ID", current->service->id);
-        printf("| %-10s | %-17s |\n", "Starts at", dateToString(current->service->startsAt));
-        printf("| %-10s | %-17s |\n", "Ends at", dateToString(current->service->endsAt));
-        printf("| %-10s | %-17s |\n", "Type", current->service->type);
-        printf("+--------------------------------+\n");
+        printf("│ %-10s │ %-17u │\n", "Service ID", current->service->id);
+        printf("│ %-10s │ %-17s │\n", "Starts at", dateToString(current->service->startsAt));
+        printf("│ %-10s │ %-17s │\n", "Ends at", dateToString(current->service->endsAt));
+        printf("│ %-10s │ %-17s │\n", "Type", current->service->type);
 
         current = current->next;
+
+        if (current == NULL) {
+            printf("└────────────────────────────────┘\n");
+
+            continue;
+        }
+
+        printf("├────────────────────────────────┤\n");
     }
 }
 
