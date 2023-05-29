@@ -19,6 +19,8 @@ extern const char *INVALID_DATE_FORMAT_MESSAGE;
 
 extern const char *INVALID_INT_MESSAGE;
 
+extern const char *OPEN_FILE_MESSAGE;
+
 void printError(const char *message);
 
 void printWarning(const char *message);

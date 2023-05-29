@@ -12,6 +12,8 @@ const char *INVALID_DATE_FORMAT_MESSAGE = "Invalid date format (yyyy-mm-dd hh:mm
 
 const char *INVALID_INT_MESSAGE = "Invalid input. Please enter a valid number.";
 
+const char *OPEN_FILE_MESSAGE = "Error opening file.";
+
 void printError(const char *message) {
     printf("%s%s\n", TERMINAL_COLOR_RED, message);
     printf("%s", TERMINAL_COLOR_DEFAULT);
