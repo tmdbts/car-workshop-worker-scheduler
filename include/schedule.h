@@ -7,6 +7,7 @@
 #include <string.h>
 #include <time.h>
 
+#include "terminal.h"
 #include "terminal_colors.h"
 #include "error_handler.h"
 
@@ -53,6 +54,8 @@ void swapServices(Services *firstService, Services *secondService);
 
 bool addService(Services **services, Service *newService);
 
+bool addBackupService(Services **services, Service *newService);
+
 void removeService(Services **services, Service *service);
 
 void removeServiceById(Services **services, unsigned int id);
@@ -74,5 +77,7 @@ struct tm *addMinutesToTime(struct tm *time, int minutes);
 void setEndDate(Service *service);
 
 Service *getService(Services *services, unsigned int id);
+
+bool isValidServiceType(char *type);
 
 #endif //CAR_WORKSHOP_WORKER_SCHEDULER_SCHEDULE_H

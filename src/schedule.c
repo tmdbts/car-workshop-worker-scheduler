@@ -196,6 +196,39 @@ bool addService(Services **services, Service *newService) {
     return true;
 }
 
+bool addBackupService(Services **services, Service *newService) {
+    Services *newNode = malloc(sizeof(Services));
+
+    if (newNode == NULL) {
+        printError(MEMORY_ALLOCATION_MESSAGE);
+
+        return false;
+    }
+
+    newNode->service = newService;
+    newNode->next = NULL;
+
+    if (*services == NULL) {
+        *services = newNode;
+
+        numberOfServices++;
+
+        return true;
+    }
+
+    Services *lastNode = *services;
+
+    while (lastNode->next != NULL) {
+        lastNode = lastNode->next;
+    }
+
+    lastNode->next = newNode;
+
+    numberOfServices++;
+
+    return true;
+}
+
 void removeService(Services **services, Service *service) {
     if (*services == NULL) {
         printError(EMPTY_LIST_ON_REMOVE_MESSAGE);
@@ -382,4 +415,14 @@ Service *getService(Services *services, unsigned int id) {
     }
 
     return NULL;
+}
+
+bool isValidServiceType(char *type) {
+    int numberOfServiceTypes = sizeof(SERVICE_TYPES) / sizeof(SERVICE_TYPES[0]);
+
+    for (int i = 0; i < numberOfServiceTypes; ++i) {
+        if (!strcmp(SERVICE_TYPES[i], type)) return true;
+    }
+
+    return false;
 }
