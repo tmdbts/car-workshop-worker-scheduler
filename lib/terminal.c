@@ -13,6 +13,8 @@ void clear() {
 bool readYesNoInput() {
     char input[2];
 
+    fflush(stdin);
+
     while (true) {
         fgets(input, sizeof(input), stdin);
 
@@ -56,4 +58,22 @@ bool isNumber(const char *str) {
     }
 
     return true;
+}
+
+char *readString(int maxCharacters) {
+    char *input = malloc(maxCharacters * sizeof(char));
+
+    if (input == NULL) {
+        printError(MEMORY_ALLOCATION_MESSAGE);
+
+        return NULL;
+    }
+
+    fgets(input, maxCharacters, stdin);
+
+    size_t inputLength = strlen(input);
+
+    if (input[inputLength - 1] == '\n') input[inputLength - 1] = '\0';
+
+    return input;
 }

@@ -21,4 +21,6 @@ int readInt();
 
 bool isNumber(const char *str);
 
+char *readString(int maxCharacters);
+
 #endif //CAR_WORKSHOP_WORKER_SCHEDULER_TERMINAL_H
