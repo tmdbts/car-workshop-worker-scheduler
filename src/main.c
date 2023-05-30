@@ -2,11 +2,9 @@
 #include <stdlib.h>
 
 #include "../include/schedule.h"
+#include "../include/menu_controller.h"
 
-int main() {
-    initBooking(&booking, &numberOfServices);
-    initBooking(&backUpBooking, &numberOfBackupServices);
-
+void bootstrap() {
     Service *newService = malloc(sizeof(Service));
 
     newService->id = 1;
@@ -34,8 +32,6 @@ int main() {
 
     addService(&booking, anotherOne);
 
-    listServices(booking);
-
     Service *oneBackup = malloc(sizeof(Service));
 
     oneBackup->id = 44;
@@ -55,13 +51,15 @@ int main() {
     addService(&backUpBooking, anotherBackup);
 
     fillBooking(&booking, &backUpBooking);
+}
 
-    removeService(&booking, newService);
+int main() {
+    initBooking(&booking, &numberOfServices);
+    initBooking(&backUpBooking, &numberOfBackupServices);
 
-    fillBooking(&booking, &backUpBooking);
+    bootstrap();
 
-    printf("Last print:\n");
-    listServices(booking);
+    mainMenuController();
 
     return 0;
 }
