@@ -9,4 +9,4 @@ else ()
     add_compile_options(-Wall -Wextra)
 endif ()
 
-add_executable(car_workshop_worker_scheduler src/main.c src/schedule.c lib/terminal.c src/constants/terminal_colors.c)
+add_executable(car_workshop_worker_scheduler src/main.c src/schedule.c lib/terminal.c src/constants/terminal_colors.c src/menu.c src/menu_controller.c src/error_handler.c src/file_handler.c)
