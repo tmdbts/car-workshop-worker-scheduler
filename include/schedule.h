@@ -39,7 +39,6 @@ extern const int REPAIR_SERVICE_TIME;
 
 void initBooking(Services **services, unsigned int *servicesCount);
 
-
 void fillBooking(Services **services, Services **backupServices);
 
 Service *createService();

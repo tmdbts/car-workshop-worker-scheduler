@@ -36,8 +36,10 @@ void fillBooking(Services **services, Services **backupServices) {
 
 Service *createService() {
     Service *newService = malloc(sizeof(Service));
-    char datetimeString[20];
-    char type[20];
+    char *datetimeString;
+    char *type;
+
+    fflush(stdin);
 
     if (newService == NULL) {
         printError(MEMORY_ALLOCATION_MESSAGE);
@@ -47,18 +49,18 @@ Service *createService() {
     newService->id = numberOfServices + 1;
 
     printf("Enter service date and time (YYYY-MM-DD HH:MM): ");
-    fgets(datetimeString, 20, stdin);
-
-    if (datetimeString[strlen(datetimeString) - 1] == '\n') {
-        datetimeString[strlen(datetimeString) - 1] = '\0';
-    }
+    datetimeString = readString(20);
 
     setStartDate(newService, datetimeString);
-    setEndDate(newService);
 
     printf("Enter service type: ");
-    scanf("%19s", type);
+    type = readString(20);
+
+    if (!isValidServiceType(type)) return NULL;
+
     newService->type = strdup(type);
+
+    setEndDate(newService);
 
     return newService;
 }
