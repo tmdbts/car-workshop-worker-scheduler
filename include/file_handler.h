@@ -7,6 +7,8 @@ extern const char *BASE_PATH;
 
 extern const char SEPARATOR;
 
+extern const int MAX_LINE_LENGTH;
+
 void saveData(Services *services, char *fileName);
 
 Services *loadData(char *fileName);

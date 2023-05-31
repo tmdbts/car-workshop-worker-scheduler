@@ -16,7 +16,6 @@ void saveData(Services *services, char *fileName) {
     char *filePath = malloc(sizeof(char) * MAX_LINE_LENGTH);
 
     strcpy(filePath, BASE_PATH);
-
     strcat(filePath, fileName);
 
     FILE *file = fopen(filePath, "w");
@@ -48,7 +47,6 @@ Services *loadData(char *fileName) {
     char *filePath = malloc(sizeof(char) * MAX_LINE_LENGTH);
 
     strcpy(filePath, BASE_PATH);
-
     strcat(filePath, fileName);
 
     FILE *file = fopen(filePath, "r");
@@ -89,11 +87,11 @@ Services *loadData(char *fileName) {
         newService->endsAt = endsAt;
         newService->type = malloc(strlen(type));
         strcpy(newService->type, type);
-//        newService->type = type;
 
         addService(&services, newService);
     }
 
     fclose(file);
+
     return services;
 }

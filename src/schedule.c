@@ -43,6 +43,7 @@ Service *createService() {
 
     if (newService == NULL) {
         printError(MEMORY_ALLOCATION_MESSAGE);
+
         return NULL;
     }
 
@@ -92,13 +93,11 @@ bool isTimeAvailable(Services **services, Service *service) {
             difftime(timegm(service->endsAt), timegm(current->service->startsAt)) >= 0)
             return false;
 
-
         current = current->next;
     }
 
     return true;
 }
-
 
 void swapServices(Services *firstService, Services *secondService) {
     Service *temp = firstService->service;
@@ -108,9 +107,7 @@ void swapServices(Services *firstService, Services *secondService) {
 }
 
 void orderAsc(Services **services) {
-    if (*services == NULL || (*services)->next == NULL) {
-        return;
-    }
+    if (*services == NULL || (*services)->next == NULL) return;
 
     bool swapped;
     Services *curr;
@@ -130,7 +127,6 @@ void orderAsc(Services **services) {
         }
 
         last = curr;
-
     } while (swapped);
 }
 
@@ -409,10 +405,8 @@ Service *getService(Services *services, unsigned int id) {
     Services *current = services;
 
     while (current != NULL) {
-        if (current->service->id == id) {
-            return current->service;
-        }
-
+        if (current->service->id == id) return current->service;
+        
         current = current->next;
     }
 

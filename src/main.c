@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "../include/schedule.h"
 #include "../include/menu_controller.h"
 
@@ -53,11 +50,12 @@ void bootstrap() {
     fillBooking(&booking, &backUpBooking);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     initBooking(&booking, &numberOfServices);
     initBooking(&backUpBooking, &numberOfBackupServices);
 
-    bootstrap();
+    if (!strcmp(argv[1], "-d"))
+        bootstrap();
 
     mainMenuController();
 
