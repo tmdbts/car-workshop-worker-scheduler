@@ -1,0 +1,85 @@
+\doxysection{lib/terminal.c File Reference}
+\hypertarget{terminal_8c}{}\label{terminal_8c}\index{lib/terminal.c@{lib/terminal.c}}
+{\ttfamily \#include \"{}../include/terminal.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{terminal_8c_ac8bb3912a3ce86b15842e79d0b421204}{clear}} ()
+\item 
+bool \mbox{\hyperlink{terminal_8c_a0c8b64b624c425bba9fdd0782ef3bda5}{read\+Yes\+No\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Reads a \"{}yes\"{} or \"{}no\"{} input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{terminal_8c_ac4dc9964d286ddbbd2a108991190d39d}{read\+Int}} ()
+\begin{DoxyCompactList}\small\item\em Reads and integer from stdin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{terminal_8c_a78a92ef3b772fb99211106561fbed5a4}{is\+Number}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{terminal_8c_a8748d005d682564aa7048d733be1bb5d}{read\+String}} (int max\+Characters)
+\begin{DoxyCompactList}\small\item\em Reads a string from stdin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{terminal_8c_ac8bb3912a3ce86b15842e79d0b421204}\label{terminal_8c_ac8bb3912a3ce86b15842e79d0b421204} 
+\index{terminal.c@{terminal.c}!clear@{clear}}
+\index{clear@{clear}!terminal.c@{terminal.c}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears the terminal \Hypertarget{terminal_8c_a78a92ef3b772fb99211106561fbed5a4}\label{terminal_8c_a78a92ef3b772fb99211106561fbed5a4} 
+\index{terminal.c@{terminal.c}!isNumber@{isNumber}}
+\index{isNumber@{isNumber}!terminal.c@{terminal.c}}
+\doxysubsubsection{\texorpdfstring{isNumber()}{isNumber()}}
+{\footnotesize\ttfamily bool is\+Number (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+Checks if a string is a number
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if str is an integer or 0 if str is not an integer 
+\end{DoxyReturn}
+\Hypertarget{terminal_8c_ac4dc9964d286ddbbd2a108991190d39d}\label{terminal_8c_ac4dc9964d286ddbbd2a108991190d39d} 
+\index{terminal.c@{terminal.c}!readInt@{readInt}}
+\index{readInt@{readInt}!terminal.c@{terminal.c}}
+\doxysubsubsection{\texorpdfstring{readInt()}{readInt()}}
+{\footnotesize\ttfamily int read\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads and integer from stdin. 
+
+\begin{DoxyReturn}{Returns}
+the read integer 
+\end{DoxyReturn}
+\Hypertarget{terminal_8c_a8748d005d682564aa7048d733be1bb5d}\label{terminal_8c_a8748d005d682564aa7048d733be1bb5d} 
+\index{terminal.c@{terminal.c}!readString@{readString}}
+\index{readString@{readString}!terminal.c@{terminal.c}}
+\doxysubsubsection{\texorpdfstring{readString()}{readString()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} read\+String (\begin{DoxyParamCaption}\item[{int}]{max\+Characters }\end{DoxyParamCaption})}
+
+
+
+Reads a string from stdin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Characters} & the maximum number of characters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the read string 
+\end{DoxyReturn}
+\Hypertarget{terminal_8c_a0c8b64b624c425bba9fdd0782ef3bda5}\label{terminal_8c_a0c8b64b624c425bba9fdd0782ef3bda5} 
+\index{terminal.c@{terminal.c}!readYesNoInput@{readYesNoInput}}
+\index{readYesNoInput@{readYesNoInput}!terminal.c@{terminal.c}}
+\doxysubsubsection{\texorpdfstring{readYesNoInput()}{readYesNoInput()}}
+{\footnotesize\ttfamily bool read\+Yes\+No\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads a \"{}yes\"{} or \"{}no\"{} input. 
+
+\begin{DoxyReturn}{Returns}
+1 if it reads \"{}yes\"{} or 0 if it reads \"{}no\"{} 
+\end{DoxyReturn}

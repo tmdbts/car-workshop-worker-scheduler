@@ -1,0 +1,88 @@
+\doxysection{schedule.\+h}
+\hypertarget{schedule_8h_source}{}\label{schedule_8h_source}\index{include/schedule.h@{include/schedule.h}}
+\mbox{\hyperlink{schedule_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAR\_WORKSHOP\_WORKER\_SCHEDULER\_SCHEDULE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CAR\_WORKSHOP\_WORKER\_SCHEDULER\_SCHEDULE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{terminal_8h}{terminal.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{terminal__colors_8h}{terminal\_colors.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{error__handler_8h}{error\_handler.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_service}{Service}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_service_adae62762a30190e27f24e40c7dbebae5}{id}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }tm\ *\mbox{\hyperlink{struct_service_ab29e71775985624534c602474fc9708b}{startsAt}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }tm\ *\mbox{\hyperlink{struct_service_afcf5cf61564c323718fc8de045f05f79}{endsAt}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_service_a742caf4d1e5738e6800236c25703b38a}{type}};}
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{struct_service}{Service}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_services}{Services}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{struct_services_a67f31523ad58dfbf3ac4c28f398da9e6}{service}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_services}{Services}}\ *\mbox{\hyperlink{struct_services_af756d83e2d4230910a4a875127432b24}{next}};}
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{struct_services}{Services}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \mbox{\hyperlink{struct_services}{Services}}\ *\mbox{\hyperlink{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a}{booking}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{struct_services}{Services}}\ *\mbox{\hyperlink{schedule_8h_aee49bee4d7573a9e949f3789b1d38c87}{backUpBooking}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{schedule_8h_a3a9ce4d23307c897c21818550d020a8c}{numberOfServices}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{schedule_8h_ad01b4709c29298fd017f675f97140631}{numberOfBackupServices}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{schedule_8h_a3003aced5b6bf15e54a02eb4ed8b876f}{SERVICE\_TYPES}}[];}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{schedule_8h_a4897088d2df38746efb93678f8e337da}{WASH\_SERVICE\_TIME}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{schedule_8h_a8884c0d31873c5be6ac02c9ad4e0b7c3}{REPAIR\_SERVICE\_TIME}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_ade80e372008b9d129e4ceff394d0086b}{initBooking}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *servicesCount);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_a9253a2c80c63d43b4e485b3d16fad13f}{fillBooking}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \mbox{\hyperlink{struct_services}{Services}}\ **backupServices);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{schedule_8h_a35e75e82e41954dd6353e6ffa364a9e2}{createService}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a0c3e880808fe256638500b668a9d78b9}{isTimeBetween8and6}}(\mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{struct_services_a67f31523ad58dfbf3ac4c28f398da9e6}{service}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a9bc3162259e407eff3d6712140bcbc4f}{isTimeAvailable}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{struct_services_a67f31523ad58dfbf3ac4c28f398da9e6}{service}});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a3527750fd31c5fcc09fb53cb112739a3}{isDateBefore}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ tm\ *date1,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ tm\ *date2);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_a7a6696e428c2152be62871cf727f74ec}{swapServices}}(\mbox{\hyperlink{struct_services}{Services}}\ *firstService,\ \mbox{\hyperlink{struct_services}{Services}}\ *secondService);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a3560b4ccb9ca875593cc805a0107875c}{addService}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \mbox{\hyperlink{struct_service}{Service}}\ *newService);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a4f24907dedbc4a52fa96b6d68438baae}{addBackupService}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \mbox{\hyperlink{struct_service}{Service}}\ *newService);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_ae6532c5c3357bad0f87e9d0d29abfa82}{removeService}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{struct_services_a67f31523ad58dfbf3ac4c28f398da9e6}{service}});}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_ac1ccdf3b4aa0fa9270236222336f0ad1}{removeServiceById}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_a2bc80ba0ab5cf7481174a6897d260747}{deleteService}}(\mbox{\hyperlink{struct_services}{Services}}\ **services,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00177\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_aa115389a822f61025b867a7e56d0a5ab}{orderAsc}}(\mbox{\hyperlink{struct_services}{Services}}\ **services);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_adc5d3b202ed191265bee234bf0fb0443}{orderDesc}}(\mbox{\hyperlink{struct_services}{Services}}\ **services);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_a085645ead55a75235c5f16af34042b0e}{listServices}}(\mbox{\hyperlink{struct_services}{Services}}\ *services);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_aa4de58b3eb1471baf30f696acff87be1}{setStartDate}}(\mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{struct_services_a67f31523ad58dfbf3ac4c28f398da9e6}{service}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *datetimeString);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{schedule_8h_aa83ece520b19be0cc4dfbdfe617257b6}{dateToString}}(\textcolor{keyword}{struct}\ tm\ *date);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{struct\ }tm\ *\mbox{\hyperlink{schedule_8h_a87374f12688f1f459bbb1382c0e0d03c}{addMinutesToTime}}(\textcolor{keyword}{struct}\ tm\ *time,\ \textcolor{keywordtype}{int}\ minutes);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{schedule_8h_adf8b3fc5707e94220f9c55c32ce1852a}{setEndDate}}(\mbox{\hyperlink{struct_service}{Service}}\ *service);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00238\ \mbox{\hyperlink{struct_service}{Service}}\ *\mbox{\hyperlink{schedule_8h_aa0ea42b60aaf960544e47a21b8541277}{getService}}(\mbox{\hyperlink{struct_services}{Services}}\ *services,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00247\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{schedule_8h_a7720b2d3ad2895d3f91847b64cfe9552}{isValidServiceType}}(\textcolor{keywordtype}{char}\ *type);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CAR\_WORKSHOP\_WORKER\_SCHEDULER\_SCHEDULE\_H}}
+
+\end{DoxyCode}

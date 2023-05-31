@@ -1,0 +1,78 @@
+\doxysection{src/file\+\_\+handler.c File Reference}
+\hypertarget{file__handler_8c}{}\label{file__handler_8c}\index{src/file\_handler.c@{src/file\_handler.c}}
+{\ttfamily \#include \"{}../include/file\+\_\+handler.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{file__handler_8c_a73c9ce1dd85d14945830832b7ff431ae}{save\+Data}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}services, char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em Saves a services list to a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{file__handler_8c_a29d0d883cf5cf060af095c4bae7e7dd6}{load\+Data}} (char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads a services list from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{file__handler_8c_a71807b93036f5ce5aac64a1b9a5307e9}{BASE\+\_\+\+PATH}} = \"{}../persistence/\"{}
+\item 
+const char \mbox{\hyperlink{file__handler_8c_a3afdc96072c1ade4e9db9f6d7ec8d882}{SEPARATOR}} = \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}
+\item 
+const int \mbox{\hyperlink{file__handler_8c_a2bed00245e126b4eff6914757499fa03}{MAX\+\_\+\+LINE\+\_\+\+LENGTH}} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{file__handler_8c_a29d0d883cf5cf060af095c4bae7e7dd6}\label{file__handler_8c_a29d0d883cf5cf060af095c4bae7e7dd6} 
+\index{file\_handler.c@{file\_handler.c}!loadData@{loadData}}
+\index{loadData@{loadData}!file\_handler.c@{file\_handler.c}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*} load\+Data (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Loads a services list from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the services list 
+\end{DoxyReturn}
+\Hypertarget{file__handler_8c_a73c9ce1dd85d14945830832b7ff431ae}\label{file__handler_8c_a73c9ce1dd85d14945830832b7ff431ae} 
+\index{file\_handler.c@{file\_handler.c}!saveData@{saveData}}
+\index{saveData@{saveData}!file\_handler.c@{file\_handler.c}}
+\doxysubsubsection{\texorpdfstring{saveData()}{saveData()}}
+{\footnotesize\ttfamily void save\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}}]{services,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Saves a services list to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em file\+Name} & the name of the file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{file__handler_8c_a71807b93036f5ce5aac64a1b9a5307e9}\label{file__handler_8c_a71807b93036f5ce5aac64a1b9a5307e9} 
+\index{file\_handler.c@{file\_handler.c}!BASE\_PATH@{BASE\_PATH}}
+\index{BASE\_PATH@{BASE\_PATH}!file\_handler.c@{file\_handler.c}}
+\doxysubsubsection{\texorpdfstring{BASE\_PATH}{BASE\_PATH}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} BASE\+\_\+\+PATH = \"{}../persistence/\"{}}
+
+\Hypertarget{file__handler_8c_a2bed00245e126b4eff6914757499fa03}\label{file__handler_8c_a2bed00245e126b4eff6914757499fa03} 
+\index{file\_handler.c@{file\_handler.c}!MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}}
+\index{MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}!file\_handler.c@{file\_handler.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINE\_LENGTH}{MAX\_LINE\_LENGTH}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+LINE\+\_\+\+LENGTH = 100}
+
+\Hypertarget{file__handler_8c_a3afdc96072c1ade4e9db9f6d7ec8d882}\label{file__handler_8c_a3afdc96072c1ade4e9db9f6d7ec8d882} 
+\index{file\_handler.c@{file\_handler.c}!SEPARATOR@{SEPARATOR}}
+\index{SEPARATOR@{SEPARATOR}!file\_handler.c@{file\_handler.c}}
+\doxysubsubsection{\texorpdfstring{SEPARATOR}{SEPARATOR}}
+{\footnotesize\ttfamily const char SEPARATOR = \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}}
+

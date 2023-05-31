@@ -1,0 +1,534 @@
+\doxysection{include/schedule.h File Reference}
+\hypertarget{schedule_8h}{}\label{schedule_8h}\index{include/schedule.h@{include/schedule.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \"{}terminal.\+h\"{}}\newline
+{\ttfamily \#include \"{}terminal\+\_\+colors.\+h\"{}}\newline
+{\ttfamily \#include \"{}error\+\_\+handler.\+h\"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_service}{Service}}
+\item 
+struct \mbox{\hyperlink{struct_services}{Services}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_service}{Service}} \mbox{\hyperlink{schedule_8h_a24ee4146cd03b57b0a4c23a33e476da9}{Service}}
+\item 
+typedef struct \mbox{\hyperlink{struct_services}{Services}} \mbox{\hyperlink{schedule_8h_a3ca811932b75869f196533641f1ad953}{Services}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{schedule_8h_ade80e372008b9d129e4ceff394d0086b}{init\+Booking}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, unsigned int \texorpdfstring{$\ast$}{*}services\+Count)
+\begin{DoxyCompactList}\small\item\em Initializes a services list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_a9253a2c80c63d43b4e485b3d16fad13f}{fill\+Booking}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, \mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}backup\+Services)
+\begin{DoxyCompactList}\small\item\em Fills the gaps in the main services list from a backup list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_a35e75e82e41954dd6353e6ffa364a9e2}{create\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Creates a service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a0c3e880808fe256638500b668a9d78b9}{is\+Time\+Between8and6}} (\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}service)
+\begin{DoxyCompactList}\small\item\em Checks if the time window for a service is between 8AM and 6PM. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a9bc3162259e407eff3d6712140bcbc4f}{is\+Time\+Available}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}service)
+\begin{DoxyCompactList}\small\item\em Checks if the time window for a service is available in the services list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a3527750fd31c5fcc09fb53cb112739a3}{is\+Date\+Before}} (const struct tm \texorpdfstring{$\ast$}{*}date1, const struct tm \texorpdfstring{$\ast$}{*}date2)
+\begin{DoxyCompactList}\small\item\em Checks if a date is before another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_a7a6696e428c2152be62871cf727f74ec}{swap\+Services}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}first\+Service, \mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}second\+Service)
+\begin{DoxyCompactList}\small\item\em Swaps to services. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a3560b4ccb9ca875593cc805a0107875c}{add\+Service}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}new\+Service)
+\begin{DoxyCompactList}\small\item\em Adds a service to a services list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a4f24907dedbc4a52fa96b6d68438baae}{add\+Backup\+Service}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}new\+Service)
+\begin{DoxyCompactList}\small\item\em Adds a service to a backup services list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_ae6532c5c3357bad0f87e9d0d29abfa82}{remove\+Service}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}service)
+\begin{DoxyCompactList}\small\item\em Removes a service from a services list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_ac1ccdf3b4aa0fa9270236222336f0ad1}{remove\+Service\+By\+Id}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, unsigned int id)
+\begin{DoxyCompactList}\small\item\em Removes a service from a services list by id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_a2bc80ba0ab5cf7481174a6897d260747}{delete\+Service}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services, unsigned int id)
+\begin{DoxyCompactList}\small\item\em Deletes a service from a services list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_aa115389a822f61025b867a7e56d0a5ab}{order\+Asc}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services)
+\begin{DoxyCompactList}\small\item\em Orders a services list in ascending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_adc5d3b202ed191265bee234bf0fb0443}{order\+Desc}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}services)
+\begin{DoxyCompactList}\small\item\em Orders a services list in descending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_a085645ead55a75235c5f16af34042b0e}{list\+Services}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}services)
+\begin{DoxyCompactList}\small\item\em prints a services list to the stdout \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_aa4de58b3eb1471baf30f696acff87be1}{set\+Start\+Date}} (\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}service, const char \texorpdfstring{$\ast$}{*}datetime\+String)
+\begin{DoxyCompactList}\small\item\em Sets a date of a service from a the string date. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_aa83ece520b19be0cc4dfbdfe617257b6}{date\+To\+String}} (struct tm \texorpdfstring{$\ast$}{*}date)
+\begin{DoxyCompactList}\small\item\em Converts a date to string. \end{DoxyCompactList}\item 
+struct tm \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_a87374f12688f1f459bbb1382c0e0d03c}{add\+Minutes\+To\+Time}} (struct tm \texorpdfstring{$\ast$}{*}time, int minutes)
+\begin{DoxyCompactList}\small\item\em Adds minutes to a time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{schedule_8h_adf8b3fc5707e94220f9c55c32ce1852a}{set\+End\+Date}} (\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}service)
+\begin{DoxyCompactList}\small\item\em Sets a date of a service. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_aa0ea42b60aaf960544e47a21b8541277}{get\+Service}} (\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}services, unsigned int id)
+\begin{DoxyCompactList}\small\item\em Gets a service from a service list by id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{schedule_8h_a7720b2d3ad2895d3f91847b64cfe9552}{is\+Valid\+Service\+Type}} (char \texorpdfstring{$\ast$}{*}type)
+\begin{DoxyCompactList}\small\item\em Checks if a service type is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a}{booking}}
+\item 
+\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_aee49bee4d7573a9e949f3789b1d38c87}{back\+Up\+Booking}}
+\item 
+unsigned int \mbox{\hyperlink{schedule_8h_a3a9ce4d23307c897c21818550d020a8c}{number\+Of\+Services}}
+\item 
+unsigned int \mbox{\hyperlink{schedule_8h_ad01b4709c29298fd017f675f97140631}{number\+Of\+Backup\+Services}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{schedule_8h_a3003aced5b6bf15e54a02eb4ed8b876f}{SERVICE\+\_\+\+TYPES}} \mbox{[}$\,$\mbox{]}
+\item 
+const int \mbox{\hyperlink{schedule_8h_a4897088d2df38746efb93678f8e337da}{WASH\+\_\+\+SERVICE\+\_\+\+TIME}}
+\item 
+const int \mbox{\hyperlink{schedule_8h_a8884c0d31873c5be6ac02c9ad4e0b7c3}{REPAIR\+\_\+\+SERVICE\+\_\+\+TIME}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{schedule_8h_a24ee4146cd03b57b0a4c23a33e476da9}\label{schedule_8h_a24ee4146cd03b57b0a4c23a33e476da9} 
+\index{schedule.h@{schedule.h}!Service@{Service}}
+\index{Service@{Service}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{Service}{Service}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_service}{Service}} \mbox{\hyperlink{struct_service}{Service}}}
+
+\Hypertarget{schedule_8h_a3ca811932b75869f196533641f1ad953}\label{schedule_8h_a3ca811932b75869f196533641f1ad953} 
+\index{schedule.h@{schedule.h}!Services@{Services}}
+\index{Services@{Services}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{Services}{Services}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_services}{Services}} \mbox{\hyperlink{struct_services}{Services}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{schedule_8h_a4f24907dedbc4a52fa96b6d68438baae}\label{schedule_8h_a4f24907dedbc4a52fa96b6d68438baae} 
+\index{schedule.h@{schedule.h}!addBackupService@{addBackupService}}
+\index{addBackupService@{addBackupService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{addBackupService()}{addBackupService()}}
+{\footnotesize\ttfamily bool add\+Backup\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{new\+Service }\end{DoxyParamCaption})}
+
+
+
+Adds a service to a backup services list. 
+
+This function will add a service to the a services backup list, which means that the service will always be added regardless of the slot being free or not.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{schedule_8h_a3560b4ccb9ca875593cc805a0107875c}{add\+Service()} if you want the time slot to specifically be available
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the backup services list \\
+\hline
+{\em new\+Service} & the service\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the was not added or 1 if it was 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a87374f12688f1f459bbb1382c0e0d03c}\label{schedule_8h_a87374f12688f1f459bbb1382c0e0d03c} 
+\index{schedule.h@{schedule.h}!addMinutesToTime@{addMinutesToTime}}
+\index{addMinutesToTime@{addMinutesToTime}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{addMinutesToTime()}{addMinutesToTime()}}
+{\footnotesize\ttfamily struct tm \texorpdfstring{$\ast$}{*} add\+Minutes\+To\+Time (\begin{DoxyParamCaption}\item[{struct tm \texorpdfstring{$\ast$}{*}}]{time,  }\item[{int}]{minutes }\end{DoxyParamCaption})}
+
+
+
+Adds minutes to a time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & the time \\
+\hline
+{\em minutes} & the amount of minutes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the date with the added minutes 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a3560b4ccb9ca875593cc805a0107875c}\label{schedule_8h_a3560b4ccb9ca875593cc805a0107875c} 
+\index{schedule.h@{schedule.h}!addService@{addService}}
+\index{addService@{addService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{addService()}{addService()}}
+{\footnotesize\ttfamily bool add\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{new\+Service }\end{DoxyParamCaption})}
+
+
+
+Adds a service to a services list. 
+
+This function will add a service to the a services list, which means that the service will only be added if the slot is free.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{schedule_8h_a4f24907dedbc4a52fa96b6d68438baae}{add\+Backup\+Service()} if you do not want the time slot to be considered
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em new\+Service} & the service\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the service was not added or 1 if it was 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a35e75e82e41954dd6353e6ffa364a9e2}\label{schedule_8h_a35e75e82e41954dd6353e6ffa364a9e2} 
+\index{schedule.h@{schedule.h}!createService@{createService}}
+\index{createService@{createService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{createService()}{createService()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*} create\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a service. 
+
+\begin{DoxyReturn}{Returns}
+the created service 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_aa83ece520b19be0cc4dfbdfe617257b6}\label{schedule_8h_aa83ece520b19be0cc4dfbdfe617257b6} 
+\index{schedule.h@{schedule.h}!dateToString@{dateToString}}
+\index{dateToString@{dateToString}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{dateToString()}{dateToString()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} date\+To\+String (\begin{DoxyParamCaption}\item[{struct tm \texorpdfstring{$\ast$}{*}}]{date }\end{DoxyParamCaption})}
+
+
+
+Converts a date to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & the date\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the converted string date 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a2bc80ba0ab5cf7481174a6897d260747}\label{schedule_8h_a2bc80ba0ab5cf7481174a6897d260747} 
+\index{schedule.h@{schedule.h}!deleteService@{deleteService}}
+\index{deleteService@{deleteService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{deleteService()}{deleteService()}}
+{\footnotesize\ttfamily void delete\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Deletes a service from a services list. 
+
+This function does not remove the memory space allocated to the service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em id} & the service id \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_a9253a2c80c63d43b4e485b3d16fad13f}\label{schedule_8h_a9253a2c80c63d43b4e485b3d16fad13f} 
+\index{schedule.h@{schedule.h}!fillBooking@{fillBooking}}
+\index{fillBooking@{fillBooking}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{fillBooking()}{fillBooking()}}
+{\footnotesize\ttfamily void fill\+Booking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{backup\+Services }\end{DoxyParamCaption})}
+
+
+
+Fills the gaps in the main services list from a backup list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the main services list \\
+\hline
+{\em backup\+Services} & the backup services list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_aa0ea42b60aaf960544e47a21b8541277}\label{schedule_8h_aa0ea42b60aaf960544e47a21b8541277} 
+\index{schedule.h@{schedule.h}!getService@{getService}}
+\index{getService@{getService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{getService()}{getService()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*} get\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}}]{services,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets a service from a service list by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em id} & the id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the service 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_ade80e372008b9d129e4ceff394d0086b}\label{schedule_8h_ade80e372008b9d129e4ceff394d0086b} 
+\index{schedule.h@{schedule.h}!initBooking@{initBooking}}
+\index{initBooking@{initBooking}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{initBooking()}{initBooking()}}
+{\footnotesize\ttfamily void init\+Booking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{services\+Count }\end{DoxyParamCaption})}
+
+
+
+Initializes a services list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em services\+Count} & the number of services in the list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_a3527750fd31c5fcc09fb53cb112739a3}\label{schedule_8h_a3527750fd31c5fcc09fb53cb112739a3} 
+\index{schedule.h@{schedule.h}!isDateBefore@{isDateBefore}}
+\index{isDateBefore@{isDateBefore}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{isDateBefore()}{isDateBefore()}}
+{\footnotesize\ttfamily bool is\+Date\+Before (\begin{DoxyParamCaption}\item[{const struct tm \texorpdfstring{$\ast$}{*}}]{date1,  }\item[{const struct tm \texorpdfstring{$\ast$}{*}}]{date2 }\end{DoxyParamCaption})}
+
+
+
+Checks if a date is before another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date1} & the date to be checked \\
+\hline
+{\em date2} & the date to be checked against\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if date1 is not before date2 and 1 if it is 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a9bc3162259e407eff3d6712140bcbc4f}\label{schedule_8h_a9bc3162259e407eff3d6712140bcbc4f} 
+\index{schedule.h@{schedule.h}!isTimeAvailable@{isTimeAvailable}}
+\index{isTimeAvailable@{isTimeAvailable}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{isTimeAvailable()}{isTimeAvailable()}}
+{\footnotesize\ttfamily bool is\+Time\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{service }\end{DoxyParamCaption})}
+
+
+
+Checks if the time window for a service is available in the services list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em service} & the service\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the time window is not available and 1 if it is 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a0c3e880808fe256638500b668a9d78b9}\label{schedule_8h_a0c3e880808fe256638500b668a9d78b9} 
+\index{schedule.h@{schedule.h}!isTimeBetween8and6@{isTimeBetween8and6}}
+\index{isTimeBetween8and6@{isTimeBetween8and6}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{isTimeBetween8and6()}{isTimeBetween8and6()}}
+{\footnotesize\ttfamily bool is\+Time\+Between8and6 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{service }\end{DoxyParamCaption})}
+
+
+
+Checks if the time window for a service is between 8AM and 6PM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em service} & the service\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is between 8AM and 6AM or 0 if it is not 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a7720b2d3ad2895d3f91847b64cfe9552}\label{schedule_8h_a7720b2d3ad2895d3f91847b64cfe9552} 
+\index{schedule.h@{schedule.h}!isValidServiceType@{isValidServiceType}}
+\index{isValidServiceType@{isValidServiceType}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{isValidServiceType()}{isValidServiceType()}}
+{\footnotesize\ttfamily bool is\+Valid\+Service\+Type (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{type }\end{DoxyParamCaption})}
+
+
+
+Checks if a service type is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the service type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the service is not valid or 1 if it is 
+\end{DoxyReturn}
+\Hypertarget{schedule_8h_a085645ead55a75235c5f16af34042b0e}\label{schedule_8h_a085645ead55a75235c5f16af34042b0e} 
+\index{schedule.h@{schedule.h}!listServices@{listServices}}
+\index{listServices@{listServices}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{listServices()}{listServices()}}
+{\footnotesize\ttfamily void list\+Services (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}}]{services }\end{DoxyParamCaption})}
+
+
+
+prints a services list to the stdout 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_aa115389a822f61025b867a7e56d0a5ab}\label{schedule_8h_aa115389a822f61025b867a7e56d0a5ab} 
+\index{schedule.h@{schedule.h}!orderAsc@{orderAsc}}
+\index{orderAsc@{orderAsc}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{orderAsc()}{orderAsc()}}
+{\footnotesize\ttfamily void order\+Asc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services }\end{DoxyParamCaption})}
+
+
+
+Orders a services list in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_adc5d3b202ed191265bee234bf0fb0443}\label{schedule_8h_adc5d3b202ed191265bee234bf0fb0443} 
+\index{schedule.h@{schedule.h}!orderDesc@{orderDesc}}
+\index{orderDesc@{orderDesc}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{orderDesc()}{orderDesc()}}
+{\footnotesize\ttfamily void order\+Desc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services }\end{DoxyParamCaption})}
+
+
+
+Orders a services list in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_ae6532c5c3357bad0f87e9d0d29abfa82}\label{schedule_8h_ae6532c5c3357bad0f87e9d0d29abfa82} 
+\index{schedule.h@{schedule.h}!removeService@{removeService}}
+\index{removeService@{removeService}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{removeService()}{removeService()}}
+{\footnotesize\ttfamily void remove\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{service }\end{DoxyParamCaption})}
+
+
+
+Removes a service from a services list. 
+
+This function does not remove the memory space allocated to the service.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{schedule_8h_a2bc80ba0ab5cf7481174a6897d260747}{delete\+Service()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em services} & \\
+\hline
+{\em service} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_ac1ccdf3b4aa0fa9270236222336f0ad1}\label{schedule_8h_ac1ccdf3b4aa0fa9270236222336f0ad1} 
+\index{schedule.h@{schedule.h}!removeServiceById@{removeServiceById}}
+\index{removeServiceById@{removeServiceById}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{removeServiceById()}{removeServiceById()}}
+{\footnotesize\ttfamily void remove\+Service\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{services,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Removes a service from a services list by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em services} & the services list \\
+\hline
+{\em id} & the service id \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_adf8b3fc5707e94220f9c55c32ce1852a}\label{schedule_8h_adf8b3fc5707e94220f9c55c32ce1852a} 
+\index{schedule.h@{schedule.h}!setEndDate@{setEndDate}}
+\index{setEndDate@{setEndDate}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{setEndDate()}{setEndDate()}}
+{\footnotesize\ttfamily void set\+End\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{service }\end{DoxyParamCaption})}
+
+
+
+Sets a date of a service. 
+
+This function calculates the end date according to the start date and the end date
+
+
+\begin{DoxyParams}{Parameters}
+{\em service} & the service \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_aa4de58b3eb1471baf30f696acff87be1}\label{schedule_8h_aa4de58b3eb1471baf30f696acff87be1} 
+\index{schedule.h@{schedule.h}!setStartDate@{setStartDate}}
+\index{setStartDate@{setStartDate}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{setStartDate()}{setStartDate()}}
+{\footnotesize\ttfamily void set\+Start\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_service}{Service}} \texorpdfstring{$\ast$}{*}}]{service,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{datetime\+String }\end{DoxyParamCaption})}
+
+
+
+Sets a date of a service from a the string date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em service} & the service \\
+\hline
+{\em datetime\+String} & the string date \\
+\hline
+\end{DoxyParams}
+\Hypertarget{schedule_8h_a7a6696e428c2152be62871cf727f74ec}\label{schedule_8h_a7a6696e428c2152be62871cf727f74ec} 
+\index{schedule.h@{schedule.h}!swapServices@{swapServices}}
+\index{swapServices@{swapServices}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{swapServices()}{swapServices()}}
+{\footnotesize\ttfamily void swap\+Services (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}}]{first\+Service,  }\item[{\mbox{\hyperlink{struct_services}{Services}} \texorpdfstring{$\ast$}{*}}]{second\+Service }\end{DoxyParamCaption})}
+
+
+
+Swaps to services. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Service} & the first service \\
+\hline
+{\em second\+Service} & the second service \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{schedule_8h_aee49bee4d7573a9e949f3789b1d38c87}\label{schedule_8h_aee49bee4d7573a9e949f3789b1d38c87} 
+\index{schedule.h@{schedule.h}!backUpBooking@{backUpBooking}}
+\index{backUpBooking@{backUpBooking}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{backUpBooking}{backUpBooking}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_services}{Services}}\texorpdfstring{$\ast$}{*} back\+Up\+Booking}
+
+\Hypertarget{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a}\label{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a} 
+\index{schedule.h@{schedule.h}!booking@{booking}}
+\index{booking@{booking}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{booking}{booking}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_services}{Services}}\texorpdfstring{$\ast$}{*} booking}
+
+\Hypertarget{schedule_8h_ad01b4709c29298fd017f675f97140631}\label{schedule_8h_ad01b4709c29298fd017f675f97140631} 
+\index{schedule.h@{schedule.h}!numberOfBackupServices@{numberOfBackupServices}}
+\index{numberOfBackupServices@{numberOfBackupServices}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{numberOfBackupServices}{numberOfBackupServices}}
+{\footnotesize\ttfamily unsigned int number\+Of\+Backup\+Services}
+
+\Hypertarget{schedule_8h_a3a9ce4d23307c897c21818550d020a8c}\label{schedule_8h_a3a9ce4d23307c897c21818550d020a8c} 
+\index{schedule.h@{schedule.h}!numberOfServices@{numberOfServices}}
+\index{numberOfServices@{numberOfServices}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{numberOfServices}{numberOfServices}}
+{\footnotesize\ttfamily unsigned int number\+Of\+Services}
+
+\Hypertarget{schedule_8h_a8884c0d31873c5be6ac02c9ad4e0b7c3}\label{schedule_8h_a8884c0d31873c5be6ac02c9ad4e0b7c3} 
+\index{schedule.h@{schedule.h}!REPAIR\_SERVICE\_TIME@{REPAIR\_SERVICE\_TIME}}
+\index{REPAIR\_SERVICE\_TIME@{REPAIR\_SERVICE\_TIME}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{REPAIR\_SERVICE\_TIME}{REPAIR\_SERVICE\_TIME}}
+{\footnotesize\ttfamily const int REPAIR\+\_\+\+SERVICE\+\_\+\+TIME\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{schedule_8h_a3003aced5b6bf15e54a02eb4ed8b876f}\label{schedule_8h_a3003aced5b6bf15e54a02eb4ed8b876f} 
+\index{schedule.h@{schedule.h}!SERVICE\_TYPES@{SERVICE\_TYPES}}
+\index{SERVICE\_TYPES@{SERVICE\_TYPES}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{SERVICE\_TYPES}{SERVICE\_TYPES}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} SERVICE\+\_\+\+TYPES\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{schedule_8h_a4897088d2df38746efb93678f8e337da}\label{schedule_8h_a4897088d2df38746efb93678f8e337da} 
+\index{schedule.h@{schedule.h}!WASH\_SERVICE\_TIME@{WASH\_SERVICE\_TIME}}
+\index{WASH\_SERVICE\_TIME@{WASH\_SERVICE\_TIME}!schedule.h@{schedule.h}}
+\doxysubsubsection{\texorpdfstring{WASH\_SERVICE\_TIME}{WASH\_SERVICE\_TIME}}
+{\footnotesize\ttfamily const int WASH\+\_\+\+SERVICE\+\_\+\+TIME\hspace{0.3cm}{\ttfamily [extern]}}
+

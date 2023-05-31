@@ -1,0 +1,105 @@
+\doxysection{src/error\+\_\+handler.c File Reference}
+\hypertarget{error__handler_8c}{}\label{error__handler_8c}\index{src/error\_handler.c@{src/error\_handler.c}}
+{\ttfamily \#include \"{}../include/error\+\_\+handler.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{error__handler_8c_abb09396ee13a44215695d146ba593be5}{print\+Error}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Prints an error message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{error__handler_8c_a4d1e61ac670f112be506aa55bc2022c2}{print\+Warning}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em prints a warning \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_ae757f493eef366ae75e01367477927b2}{MEMORY\+\_\+\+ALLOCATION\+\_\+\+MESSAGE}} = \"{}Memory allocation error.\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_a4ba647a7cebdbfb596589d6fd73d5e5b}{UNAVAILABLE\+\_\+\+TIME\+\_\+\+SLOT\+\_\+\+MESSAGE}} = \"{}The selected time is unavailable.\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_aa61197dc3909ecc4298606e955c756ae}{EMPTY\+\_\+\+LIST\+\_\+\+ON\+\_\+\+REMOVE\+\_\+\+MESSAGE}} = \"{}The \mbox{\hyperlink{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a}{booking}} is empty. Couldn\textquotesingle{}t remove appointment.\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_a617620d16462c1faafc4ac35641a1204}{APPOINTMENT\+\_\+\+NOT\+\_\+\+FOUND\+\_\+\+MESSAGE}} = \"{}The appointment you selected does not exist.\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_affe2bfe002da060fe161370b9768c096}{INVALID\+\_\+\+DATE\+\_\+\+FORMAT\+\_\+\+MESSAGE}} = \"{}Invalid date format (yyyy-\/mm-\/dd hh\+:mm).\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_a9006af5607adda77a0a39a8f382a31a8}{INVALID\+\_\+\+INT\+\_\+\+MESSAGE}} = \"{}Invalid input. Please enter a valid number.\"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{error__handler_8c_a699913a59479986cdb143b9ad1eddfc4}{OPEN\+\_\+\+FILE\+\_\+\+MESSAGE}} = \"{}Error opening file.\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{error__handler_8c_abb09396ee13a44215695d146ba593be5}\label{error__handler_8c_abb09396ee13a44215695d146ba593be5} 
+\index{error\_handler.c@{error\_handler.c}!printError@{printError}}
+\index{printError@{printError}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{printError()}{printError()}}
+{\footnotesize\ttfamily void print\+Error (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+Prints an error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message to be printed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{error__handler_8c_a4d1e61ac670f112be506aa55bc2022c2}\label{error__handler_8c_a4d1e61ac670f112be506aa55bc2022c2} 
+\index{error\_handler.c@{error\_handler.c}!printWarning@{printWarning}}
+\index{printWarning@{printWarning}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{printWarning()}{printWarning()}}
+{\footnotesize\ttfamily void print\+Warning (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+prints a warning 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the message to be printed \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{error__handler_8c_a617620d16462c1faafc4ac35641a1204}\label{error__handler_8c_a617620d16462c1faafc4ac35641a1204} 
+\index{error\_handler.c@{error\_handler.c}!APPOINTMENT\_NOT\_FOUND\_MESSAGE@{APPOINTMENT\_NOT\_FOUND\_MESSAGE}}
+\index{APPOINTMENT\_NOT\_FOUND\_MESSAGE@{APPOINTMENT\_NOT\_FOUND\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{APPOINTMENT\_NOT\_FOUND\_MESSAGE}{APPOINTMENT\_NOT\_FOUND\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} APPOINTMENT\+\_\+\+NOT\+\_\+\+FOUND\+\_\+\+MESSAGE = \"{}The appointment you selected does not exist.\"{}}
+
+\Hypertarget{error__handler_8c_aa61197dc3909ecc4298606e955c756ae}\label{error__handler_8c_aa61197dc3909ecc4298606e955c756ae} 
+\index{error\_handler.c@{error\_handler.c}!EMPTY\_LIST\_ON\_REMOVE\_MESSAGE@{EMPTY\_LIST\_ON\_REMOVE\_MESSAGE}}
+\index{EMPTY\_LIST\_ON\_REMOVE\_MESSAGE@{EMPTY\_LIST\_ON\_REMOVE\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{EMPTY\_LIST\_ON\_REMOVE\_MESSAGE}{EMPTY\_LIST\_ON\_REMOVE\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} EMPTY\+\_\+\+LIST\+\_\+\+ON\+\_\+\+REMOVE\+\_\+\+MESSAGE = \"{}The \mbox{\hyperlink{schedule_8h_afdb32b3b98d826bbd028a12074c15e4a}{booking}} is empty. Couldn\textquotesingle{}t remove appointment.\"{}}
+
+\Hypertarget{error__handler_8c_affe2bfe002da060fe161370b9768c096}\label{error__handler_8c_affe2bfe002da060fe161370b9768c096} 
+\index{error\_handler.c@{error\_handler.c}!INVALID\_DATE\_FORMAT\_MESSAGE@{INVALID\_DATE\_FORMAT\_MESSAGE}}
+\index{INVALID\_DATE\_FORMAT\_MESSAGE@{INVALID\_DATE\_FORMAT\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{INVALID\_DATE\_FORMAT\_MESSAGE}{INVALID\_DATE\_FORMAT\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} INVALID\+\_\+\+DATE\+\_\+\+FORMAT\+\_\+\+MESSAGE = \"{}Invalid date format (yyyy-\/mm-\/dd hh\+:mm).\"{}}
+
+\Hypertarget{error__handler_8c_a9006af5607adda77a0a39a8f382a31a8}\label{error__handler_8c_a9006af5607adda77a0a39a8f382a31a8} 
+\index{error\_handler.c@{error\_handler.c}!INVALID\_INT\_MESSAGE@{INVALID\_INT\_MESSAGE}}
+\index{INVALID\_INT\_MESSAGE@{INVALID\_INT\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{INVALID\_INT\_MESSAGE}{INVALID\_INT\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} INVALID\+\_\+\+INT\+\_\+\+MESSAGE = \"{}Invalid input. Please enter a valid number.\"{}}
+
+\Hypertarget{error__handler_8c_ae757f493eef366ae75e01367477927b2}\label{error__handler_8c_ae757f493eef366ae75e01367477927b2} 
+\index{error\_handler.c@{error\_handler.c}!MEMORY\_ALLOCATION\_MESSAGE@{MEMORY\_ALLOCATION\_MESSAGE}}
+\index{MEMORY\_ALLOCATION\_MESSAGE@{MEMORY\_ALLOCATION\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{MEMORY\_ALLOCATION\_MESSAGE}{MEMORY\_ALLOCATION\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} MEMORY\+\_\+\+ALLOCATION\+\_\+\+MESSAGE = \"{}Memory allocation error.\"{}}
+
+\Hypertarget{error__handler_8c_a699913a59479986cdb143b9ad1eddfc4}\label{error__handler_8c_a699913a59479986cdb143b9ad1eddfc4} 
+\index{error\_handler.c@{error\_handler.c}!OPEN\_FILE\_MESSAGE@{OPEN\_FILE\_MESSAGE}}
+\index{OPEN\_FILE\_MESSAGE@{OPEN\_FILE\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{OPEN\_FILE\_MESSAGE}{OPEN\_FILE\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} OPEN\+\_\+\+FILE\+\_\+\+MESSAGE = \"{}Error opening file.\"{}}
+
+\Hypertarget{error__handler_8c_a4ba647a7cebdbfb596589d6fd73d5e5b}\label{error__handler_8c_a4ba647a7cebdbfb596589d6fd73d5e5b} 
+\index{error\_handler.c@{error\_handler.c}!UNAVAILABLE\_TIME\_SLOT\_MESSAGE@{UNAVAILABLE\_TIME\_SLOT\_MESSAGE}}
+\index{UNAVAILABLE\_TIME\_SLOT\_MESSAGE@{UNAVAILABLE\_TIME\_SLOT\_MESSAGE}!error\_handler.c@{error\_handler.c}}
+\doxysubsubsection{\texorpdfstring{UNAVAILABLE\_TIME\_SLOT\_MESSAGE}{UNAVAILABLE\_TIME\_SLOT\_MESSAGE}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} UNAVAILABLE\+\_\+\+TIME\+\_\+\+SLOT\+\_\+\+MESSAGE = \"{}The selected time is unavailable.\"{}}
+
