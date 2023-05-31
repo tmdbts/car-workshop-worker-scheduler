@@ -21,8 +21,18 @@ extern const char *INVALID_INT_MESSAGE;
 
 extern const char *OPEN_FILE_MESSAGE;
 
+/**
+ * @brief Prints an error message
+ *
+ * @param message the message to be printed
+ */
 void printError(const char *message);
 
+/**
+ * @brief prints a warning
+ *
+ * @param message the message to be printed
+ */
 void printWarning(const char *message);
 
 #endif //CAR_WORKSHOP_WORKER_SCHEDULER_ERROR_HANDLER_H
