@@ -73,7 +73,7 @@ bool isTimeBetween8and6(Service *service) {
     return startsAt->tm_hour >= 8 && endsAt->tm_hour < 18;
 }
 
-bool compareDates(const struct tm *date1, const struct tm *date2) {
+bool isDateBefore(const struct tm *date1, const struct tm *date2) {
     struct tm copy1 = *date1;
     struct tm copy2 = *date2;
 
@@ -118,7 +118,7 @@ void orderAsc(Services **services) {
         curr = *services;
 
         while (curr->next != last) {
-            if (!compareDates(curr->service->startsAt, curr->next->service->startsAt)) {
+            if (!isDateBefore(curr->service->startsAt, curr->next->service->startsAt)) {
                 swapServices(curr, curr->next);
                 swapped = true;
             }
@@ -142,7 +142,7 @@ void orderDesc(Services **services) {
         curr = *services;
 
         while (curr->next != last) {
-            if (compareDates(curr->service->startsAt, curr->next->service->startsAt)) {
+            if (isDateBefore(curr->service->startsAt, curr->next->service->startsAt)) {
                 swapServices(curr, curr->next);
                 swapped = true;
             }
@@ -406,7 +406,7 @@ Service *getService(Services *services, unsigned int id) {
 
     while (current != NULL) {
         if (current->service->id == id) return current->service;
-        
+
         current = current->next;
     }
 
