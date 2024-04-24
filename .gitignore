@@ -416,3 +416,4 @@ $RECYCLE.BIN/
 
 # Custom
 persistence/
+build/
